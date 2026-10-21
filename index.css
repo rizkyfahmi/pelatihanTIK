@@ -57,14 +57,6 @@ p {
     line-height: 1.5;
 }
 
-.button-group {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
 button {
     cursor: pointer;
     border: none;
@@ -77,6 +69,7 @@ button {
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 16px;
 }
 
 button:hover {
@@ -89,19 +82,13 @@ button:active {
 }
 
 a {
-    display: inline-block;
-    padding: 10px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 600;
+    color: #38bdf8;
+    text-decoration: underline;
     font-size: 0.9rem;
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.35);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
+    color: #ec4899;
 }
