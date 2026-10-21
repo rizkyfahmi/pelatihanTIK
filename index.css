@@ -26,33 +26,35 @@ body {
     text-align: center; /* Menengahkan semua teks di dalam kartu */
 }
 
-.kartu-profil h1 {
-    font-size: 22px;
-    margin: 16px 0 10px;
-    color: #191970;
-}
-
-.kartu-profil p {
-    font-size: 13.5px;
-    line-height: 1.6;
-    margin: 0 0 16px;
-    color: #191970;
-    text-align: center;
-}
-
+/* Foto Profil: Hover Bersih, Halus, dan Alami (Tanpa Cincin Warna) */
 .kartu-profil img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     object-position: 65% 50%;
-    border-radius: 50%; /* Trik untuk membuat gambar persegi menjadi lingkaran sempurna */
+    border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .kartu-profil img:hover {
-    opacity: 0.9;
-    transform: scale(1.03);
+    transform: translateY(-5px) scale(1.04); /* Mengangkat halus saat kursor diarahkan */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+}
+
+.kartu-profil h1 {
+    font-size: 22px;
+    margin: 14px 0 8px;
+    color: #191970;
+}
+
+.kartu-profil p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 0 0 16px;
+    color: #191970;
+    text-align: center;
 }
 
 .kartu-profil a {
@@ -83,7 +85,7 @@ button:active {
     transform: scale(0.98);
 }
 
-/* Modal Popup Foto ala WhatsApp */
+/* Modal Popup Foto ala WhatsApp (Lingkaran) */
 .modal-foto {
     position: fixed;
     top: 0;
@@ -115,6 +117,7 @@ button:active {
     object-position: 65% 50%;
     border-radius: 50%; /* Bentuk lingkaran sempurna saat membesar */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     transform: scale(0.5);
     transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2); /* Animasi pop-up membesar */
 }

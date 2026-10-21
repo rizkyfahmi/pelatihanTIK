@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafe Kita - Kopi & Kuliner Hangat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigasi -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#beranda" class="logo">
+                <span class="logo-icon">☕</span> Kafe Kita
+            </a>
+
+            <!-- Tombol Hamburger Mobile -->
+            <button id="menuToggle" class="menu-toggle" aria-label="Buka Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigasi Menu -->
+            <ul id="navMenu" class="nav-menu">
+                <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#tentang" class="nav-link">Tentang</a></li>
+                <li>
+                    <button id="cartBtn" class="cart-btn" aria-label="Buka Keranjang Belanja">
+                        <span>🛒 Keranjang</span>
+                        <span id="cartCountBadge" class="cart-badge">0</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Halaman Beranda (Hero Section) -->
+        <section id="beranda" class="hero">
+            <div class="hero-content container">
+                <span class="hero-tag">Selamat Datang di Kafe Kita</span>
+                <h1 class="hero-title">Secangkir Kehangatan, Cerita Penuh Rasa</h1>
+                <p class="hero-desc">
+                    Hadir menemani setiap momen Anda dengan racikan biji kopi Nusantara pilihan dan sajian pastry lezat yang selalu dipanggang segar setiap hari.
+                </p>
+                <div class="hero-cta">
+                    <a href="#menu" class="btn btn-primary">Lihat Menu</a>
+                    <a href="#tentang" class="btn btn-outline">Tentang Kami</a>
+                </div>
+
+                <!-- Keunggulan Kafe -->
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🌿</span>
+                        <div>
+                            <h4>100% Kopi Asli</h4>
+                            <p>Biji kopi nusantara pilihan</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🥐</span>
+                        <div>
+                            <h4>Freshly Baked</h4>
+                            <p>Kue dan roti segar tiap hari</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">❤️</span>
+                        <div>
+                            <h4>Suasana Nyaman</h4>
+                            <p>Cocok untuk santai & kerja</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Daftar Menu -->
+        <section id="menu" class="menu-section container">
+            <div class="section-header">
+                <span class="section-tag">Pilihan Terbaik</span>
+                <h2 class="section-title">Daftar Menu Kafe Kita</h2>
+                <p class="section-desc">Pilih minuman dan makanan favorit Anda, kami racik dengan penuh cinta.</p>
+
+                <!-- Filter Kategori -->
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">Semua Menu</button>
+                    <button class="filter-btn" data-category="Minuman">☕ Minuman</button>
+                    <button class="filter-btn" data-category="Makanan">🥐 Makanan</button>
+                </div>
+            </div>
+
+            <!-- Grid Menu (Dimuat secara dinamis via JavaScript) -->
+            <div id="menuGrid" class="menu-grid">
+                <!-- Data menu dirender oleh script.js -->
+            </div>
+        </section>
+
+        <!-- Bagian Tentang Kafe -->
+        <section id="tentang" class="about-section">
+            <div class="container about-wrapper">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=700&auto=format&fit=crop&q=80" alt="Suasana Kafe Kita" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <span class="section-tag">Kenali Kami</span>
+                    <h2 class="section-title">Tempat Nyaman untuk Berkumpul & Berkarya</h2>
+                    <p>
+                        Kafe Kita lahir dari kecintaan kami terhadap kopi lokal dan makanan sederhana yang membangkitkan senyuman. Kami merancang ruang yang tenang dan ramah untuk belajar, bekerja, atau sekadar berbincang santai bersama orang-orang tercinta.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h3>8+</h3>
+                            <p>Varian Menu Pilihan</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Bahan Segar Alami</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>08.00 - 22.00</h3>
+                            <p>Buka Setiap Hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Drawer Keranjang Belanja -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-content">
+            <div class="cart-header">
+                <h3>🛒 Keranjang Pesanan</h3>
+                <button id="closeCartBtn" class="close-btn" aria-label="Tutup Keranjang">&times;</button>
+            </div>
+
+            <!-- List Item Keranjang -->
+            <div id="cartItemsList" class="cart-items">
+                <!-- Item keranjang dirender oleh script.js -->
+            </div>
+
+            <!-- Footer Ringkasan Keranjang -->
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Total Pembayaran:</span>
+                    <strong id="cartTotalPrice" class="cart-total-price">Rp 0</strong>
+                </div>
+                <button id="openCheckoutBtn" class="btn btn-primary btn-block">Lanjut ke Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!-- Backdrop Overlay untuk Keranjang -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- Modal Formulir Checkout -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Formulir Pemesanan</h3>
+                <button id="closeCheckoutBtn" class="close-btn" aria-label="Tutup Formulir">&times;</button>
+            </div>
+            <form id="checkoutForm" class="checkout-form">
+                <!-- Ringkasan Singkat Pesanan -->
+                <div class="checkout-summary">
+                    <h4>Ringkasan Pesanan Anda</h4>
+                    <div id="checkoutSummaryItems" class="checkout-summary-list"></div>
+                    <div class="checkout-summary-total">
+                        <span>Total:</span>
+                        <strong id="checkoutSummaryTotal">Rp 0</strong>
+                    </div>
+                </div>
+
+                <!-- Input Pelanggan -->
+                <div class="form-group">
+                    <label for="customerName">Nama Pelanggan <span class="required">*</span></label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Masukkan nama lengkap Anda" required>
+                    <small id="nameError" class="input-error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="orderNotes">Catatan Pesanan (Opsional)</label>
+                    <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Contoh: Kurang manis, saus sambal dipisah, dsb."></textarea>
+                </div>
+
+                <div class="checkout-actions">
+                    <button type="button" id="cancelCheckoutBtn" class="btn btn-outline">Batal</button>
+                    <button type="submit" class="btn btn-primary">Konfirmasi Pesanan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Konfirmasi Pesanan Berhasil (Simulasi) -->
+    <div id="successModal" class="modal">
+        <div class="modal-content modal-success">
+            <div class="success-icon">🎉</div>
+            <h3>Pesanan Berhasil Disimulasikan!</h3>
+            <p id="successCustomerMessage" class="success-message"></p>
+            
+            <div id="successReceipt" class="success-receipt">
+                <!-- Rincian struk simulasi -->
+            </div>
+
+            <div class="simulation-notice">
+                ⚠️ <strong>Catatan:</strong> Ini adalah website simulasi pemesanan online Kafe Kita menggunakan Vanilla JavaScript (Frontend saja). Tidak ada transaksi nyata ataupun backend server yang terhubung.
+            </div>
+
+            <button id="finishOrderBtn" class="btn btn-primary btn-block">Selesai & Pesan Lagi</button>
+        </div>
+    </div>
+
+    <!-- Footer Website -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="#beranda" class="logo footer-logo">
+                    <span>☕</span> Kafe Kita
+                </a>
+                <p>Tempat ternyaman untuk menikmati seduhan kopi berkualitas dan kelezatan hidangan pembawa senyum.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="#beranda">Beranda</a></li>
+                    <li><a href="#menu">Daftar Menu</a></li>
+                    <li><a href="#tentang">Tentang Kafe</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Jam Operasional</h4>
+                <p>Senin - Minggu: 08:00 - 22:00 WIB</p>
+                <p>Lokasi: Jl. Kopi Hangat No. 123, Indonesia</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 <strong>Kafe Kita</strong>. Dibuat dengan HTML, CSS, dan Vanilla JavaScript murni.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Terhubung -->
+    <script src="script.js"></script>
+</body>
+</html>
