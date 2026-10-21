@@ -1,20 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #FFFFE0; /* Warna kuning cerah */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4EBD9; /* Warna cream hangat yang elegan */
     font-family: Arial, sans-serif; /* Jenis huruf yang bersih dan mudah dibaca */
     color: #191970; /* Warna teks utama (Biru Gelap) */
 }
 
 .kartu-profil {
-    width: 300px;
-    margin: 50px auto; /* 50px jarak atas/bawah, auto menengahkan kiri/kanan */
-    padding: 20px;
-    background-color: white;
-    border-radius: 15px; /* Membuat sudut menjadi melengkung */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Efek bayangan */
+    width: 320px;
+    max-width: 92vw;
+    margin: 0 auto;
+    padding: 28px 24px;
+    background-color: #FFFFFF; /* Warna putih bersih agar kartu kontras jelas dengan cream luar */
+    border-radius: 18px; /* Membuat sudut menjadi melengkung */
+    border: 1px solid rgba(140, 110, 80, 0.12); /* Garis batas lembut pembeda kartu */
+    box-shadow: 0 12px 28px rgba(90, 70, 50, 0.12); /* Efek bayangan hangat yang mengangkat kartu */
     text-align: center; /* Menengahkan semua teks di dalam kartu */
+}
+
+.kartu-profil h1 {
+    font-size: 22px;
+    margin: 16px 0 10px;
+    color: #191970;
+}
+
+.kartu-profil p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    color: #191970;
+    text-align: center;
 }
 
 .kartu-profil img {
     width: 150px;
+    height: 150px;
+    object-fit: cover;
+    object-position: 65% 50%;
     border-radius: 50%; /* Trik untuk membuat gambar persegi menjadi lingkaran sempurna */
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.kartu-profil img:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+.kartu-profil a {
+    color: blue;
+    text-decoration: underline;
+    font-size: 14px;
+    display: inline-block;
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    color: #191970;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #e2e8f0;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Modal Popup Foto ala WhatsApp */
+.modal-foto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Latar gelap khas WhatsApp */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.modal-foto.aktif {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-foto img {
+    width: 320px;
+    height: 320px;
+    max-width: 85vw;
+    max-height: 85vw;
+    object-fit: cover;
+    object-position: 65% 50%;
+    border-radius: 50%; /* Bentuk lingkaran sempurna saat membesar */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    transform: scale(0.5);
+    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1.2); /* Animasi pop-up membesar */
+}
+
+.modal-foto.aktif img {
+    transform: scale(1);
 }

@@ -9,11 +9,19 @@
 <body>
 
     <div class="kartu-profil">
-        <img src="profile.jpg" alt="Foto Profil Rizky Fahmi">
+        <img id="fotoProfil" src="profile.jpg" alt="Foto Profil Rizky Fahmi" title="Klik foto untuk melihat ukuran besar">
         <h1>Rizky Fahmi</h1>
-        <p>Siswa SMK jurusan Rekayasa Perangkat Lunak</p>
+        <p>Saya adalah siswa SMK jurusan Rekayasa Perangkat Lunak yang memiliki ketertarikan mendalam pada pengembangan web dan teknologi digital. Senang mempelajari hal-hal baru, membuat proyek kreatif, dan bersemangat untuk terus berkembang menjadi seorang pengembang perangkat lunak profesional.</p>
         <a href="https://www.instagram.com/" target="_blank">Kunjungi Instagram Saya</a>
+        <br>
+        <button id="sapaButton">Sapa Saya</button>
     </div>
 
+    <!-- Modal Popup Foto ala WhatsApp -->
+    <div id="modalFoto" class="modal-foto" title="Klik di mana saja untuk menutup">
+        <img src="profile.jpg" alt="Foto Profil Rizky Fahmi">
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
